@@ -1,6 +1,6 @@
 # Domain Name System (DNS) Query and response
 # As defined by IETF RFC1035 (http://tools.ietf.org/html/rfc1035)
-# this is a DNS query for www.google.com to a private DNS server (192.168.x.y etc)
+# this is a simulated DNS query for a real host to a real DNS server
 
 Name "DNS"
 Port "53"
