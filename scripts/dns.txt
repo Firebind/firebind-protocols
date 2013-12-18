@@ -3,7 +3,7 @@
 # this is a simulated DNS query for a real host to a real DNS server
 
 Name "DNS"
-Port "53"
+Ports "53"
 Transport "UDP"
 
 # this is the standard query, the scan GUID is inserted dynamically in base64
