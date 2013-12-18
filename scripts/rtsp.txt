@@ -1,0 +1,32 @@
+# Real Time Streaming Protocol (RTSP) Setup and response
+# As defined by IETF RFC2326 (http://tools.ietf.org/html/rfc2326)
+# this is a simulated setup request to a real RTSP server
+
+Name "RTSP"
+Ports "554"
+Transport "TCP"
+
+# the setup request, note the GUID is text encoded in the request URI
+msg 1, CLIENT->SERVER {
+  "SETUP rtsp://firebind?AppUid=$(GUID.TXT)&AssetUid=0008000b&NodeGroupId=1&PackageId=0 RTSP/1.0" 0x0D 0x0A
+  "CSeq: 1" 0x0D 0x0A
+  "Firebind-Version: 2.0" 0x0D 0x0A
+  "Transport: MP2T/AVP/UDP;unicast;destination=0.0.0.0;client_port=21310" 0x0D 0x0A
+  "Firebind-MayNotify: " 0x0D 0x0A
+  "Firebind-Server-Data:node-group-id=1;device-id=001513d29e27" 0x0D 0x0A
+  "Firebind-Mod-Data:time-remaining=37;purchase-time=1121374553" 
+  0x0D 0x0A 0x0D 0x0A
+}
+
+# setup response
+msg 2, CLIENT<-SERVER, delay 1000 {  
+  "RTSP/1.0 200 OK" 0x0D 0x0A
+  "Accept-Ranges: NPT" 0x0D 0x0A
+  "CSeq: 1" 0x0D 0x0A
+  "Session: 000013d29fd701d6d6bd;timeout=300" 0x0D 0x0A
+  "Transport: MP2T/AVP/UDP;unicast;destination=0.0.0.0;client_port=21310;source=10.12.8.2;source_port=340" 
+  0x0D 0x0A 0x0D 0x0A
+}
+
+# This script is for use with Firebind Path Scan Client Software
+# Copyright (C) 2013 Firebind Inc. All rights reserved.
