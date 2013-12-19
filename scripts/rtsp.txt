@@ -8,7 +8,7 @@ Transport "TCP"
 
 # the setup request, note the GUID is text encoded in the request URI
 msg 1, CLIENT->SERVER {
-  "SETUP rtsp://firebind?AppUid=$(GUID.TXT)&AssetUid=0008000b&NodeGroupId=1&PackageId=0 RTSP/1.0" 0x0D 0x0A
+  "SETUP rtsp://firebind?AppUid=" $(GUID.TXT) "&AssetUid=0008000b&NodeGroupId=1&PackageId=0 RTSP/1.0" 0x0D 0x0A
   "CSeq: 1" 0x0D 0x0A
   "Firebind-Version: 2.0" 0x0D 0x0A
   "Transport: MP2T/AVP/UDP;unicast;destination=0.0.0.0;client_port=21310" 0x0D 0x0A
