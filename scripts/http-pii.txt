@@ -3,7 +3,7 @@
 # This is a simulated request and response containing PII such as
 @ social security numbers, credit cards, names and birthdays
 
-Name "HTTP"
+Name "HTTP-PII"
 Ports "80"
 Transport "TCP"
 
