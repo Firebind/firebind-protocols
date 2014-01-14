@@ -1,0 +1,48 @@
+# Hypertext Transfer Protocol (HTTP) version 1.1 request and response
+# As specified by IETF RFC 2616 (http://tools.ietf.org/html/rfc2616)
+# This is a simulated request and response
+
+Name "HTTP"
+Ports "80"
+Transport "TCP"
+
+# Basic HTTP request
+msg 1, CLIENT->SERVER {
+  "GET /index.html HTTP/1.1" 0x0D 0x0A
+  "Host: www.firebind.com" 0x0D 0x0A
+  "User-Agent: Mozilla/5.0 (Windows; U; Windows NT 5.1; en-US; rv:1.6) Gecko/20040113" 0x0D 0x0A
+  "Accept: text/xml,application/xml,application/xhtml+xml,text/html;q=0.9,text/plain;q=0.8,image/png,image/jpeg,image/gif;q=0.2,*/*;q=0.1" 0x0D 0x0A
+  "Accept-Language: en-us,en;q=0.5" 0x0D 0x0A
+  "Accept-Encoding: gzip,deflate" 0x0D 0x0A
+  "Accept-Charset: ISO-8859-1,utf-8;q=0.7,*;q=0.7" 0x0D 0x0A
+  "Keep-Alive: " $(GUID,32) 0x0D 0x0A
+  "Connection: keep-alive" 0x0D 0x0A
+  "Referer: http://www.dilbert.com/noproxy.html" 0x0D 0x0A 
+   0x0D 0x0A
+}
+ 
+# simple response
+msg 2, CLIENT<-SERVER, delay 1000 {
+  "HTTP/1.1 200 OK" 0x0D 0x0A 
+  "Date: Thu, 16 May 2014 10:17:12 GMT" 0x0D 0x0A
+  "Server: Apache" 0x0D 0x0A
+  "Last-Modified: Tue, 12 May 2014 13:17:00 GMT" 0x0D 0x0A
+  "Accept-Ranges: bytes" 0x0D 0x0A
+  "Content-Length: 18070" 0x0D 0x0A
+  "Keep-Alive: timeout=15, max=100" 0x0D 0x0A
+  "Connection: Keep-Alive" 0x0D 0x0A
+  "Content-Type: text/html; charset=ISO-8859-1" 0x0D 0x0A
+  0x0D 0x0A
+  "<?xml version=\"1.0\" encoding=\"UTF-8\"?>"
+  "<html>"
+  "  <head>"
+  "    <title>title</title>"
+  "  </head>"
+  "  <body>"
+  "    body"
+  "  </body>"
+  "</html>"
+}
+
+# This script is for use with Firebind Path Scan Client Software
+# Copyright (C) 2013 Firebind Inc. All rights reserved.
