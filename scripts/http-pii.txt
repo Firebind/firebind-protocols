@@ -1,6 +1,7 @@
 # Hypertext Transfer Protocol (HTTP) version 1.1 request and response
 # As specified by IETF RFC 2616 (http://tools.ietf.org/html/rfc2616)
-# This is a simulated request and response
+# This is a simulated request and response containing PII such as
+@ social security numbers, credit cards, names and birthdays
 
 Name "HTTP"
 Ports "80"
@@ -35,26 +36,30 @@ msg 2, CLIENT<-SERVER, delay 1000 {
   "Content-Type: text/html; charset=ISO-8859-1" 0x0D 0x0A
   0x0D 0x0A
   "<?xml version=\"1.0\" encoding=\"UTF-8\"?>"
-  <social-security-numbers>
-    <number>012-34-5678</number>
-    <number>012-34-5678</number>
-    <number>012-34-5678</number>
-    <number>012-34-5678</number>
-  <social-security-numbers>
-  <credit-cards>
-    <credit-card>4012888888881881</credit-card>
-    <credit-card>5555555555554444</credit-card>
-    <credit-card>371449635398431</credit-card>
-    <credit-card>6011111111111117</credit-card>
-  <credit-cards>
-  <birthdays>
-    <birthday>11-11-11</birthday>
-    <birthday>12-12-12</birthday>
-    <birthday>10-10-10</birthday>
-    <birthday>10-10-72</birthday>
-  <birthdays>
-  <names>
-  <names>
+  "<social-security-numbers>"
+    "<number>012-34-5678</number>"
+    "<number>012-34-5678</number>"
+    "<number>012-34-5678</number>"
+    "<number>012-34-5678</number>"
+  "<social-security-numbers>"
+  "<credit-cards>"
+    "<credit-card>4012888888881881</credit-card>"
+    "<credit-card>5555555555554444</credit-card>"
+    "<credit-card>371449635398431</credit-card>"
+    "<credit-card>6011111111111117</credit-card>"
+  "<credit-cards>"
+  "<birthdays>"
+    "<birthday>11-11-11</birthday>"
+    "<birthday>12-12-12</birthday>"
+    "<birthday>10-10-10</birthday>"
+    "<birthday>10-10-72</birthday>"
+  "<birthdays>"
+  "<names>"
+    "<name>Albert Einstein</name>"
+    "<name>Steve Austin</name>"
+    "<name>Mickey Mouse</name>"
+    "<name>James Kirk</name>"
+  "<names>"
   
 }
 
