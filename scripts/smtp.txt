@@ -1,0 +1,253 @@
+# Simple Mail Transfer Protocol (SMTP)
+# As defined by IETF RFC5321 (http://tools.ietf.org/html/rfc5321)
+#
+
+Name "SMTP"
+Ports "25,587"
+Transport "TCP"
+
+#EHLO GP - 45 48 4c 4f 20 47 50 0d 0a
+msg 1, CLIENT->SERVER {
+ "EHLO GP" $(GUID) 0x0d 0x0a
+}
+
+msg 2, CLIENT<-SERVER {
+"220-xc90.websitewelcome.com ESMTP Exim 4.69 #1 Mon, 05 Oct 2009 01:05:54 -0500 " 0x0D 0x0A 
+"220-We do not authorize the use of this system to transport unsolicited, " 0x0D 0x0A 
+"220 and/or bulk e-mail." 0x0D 0x0A 
+}
+
+msg 3, CLIENT->SERVER {
+ "EHLO " $(GUID) 0x0d 0x0a
+}
+
+msg 4, CLIENT<-SERVER {
+  "250-xc90.websitewelcome.com Hello GP" $(GUID) " [122.162.143.157]" 0x0d 0x0a
+  "250-SIZE 52428800" 0x0d 0x0a
+  "250-PIPELINING" 0x0d 0x0a
+  "250-AUTH PLAIN LOGIN" 0x0d 0x0a
+  "250-STARTTLS" 0x0d 0x0a
+  "250 HELP" 0x0d 0x0a
+}
+
+msg 5, CLIENT->SERVER {
+  "AUTH LOGIN " $(GUID) 0x0d 0x0a
+}
+
+msg 6, CLIENT<-SERVER {
+  "334 VXNlcm5hbWU6" 0x0d 0x0a
+}
+
+msg 7, CLIENT->SERVER {
+  "Z3VycGFydGFwQHBhdHJpb3RzLmlu" $(GUID) 0x0d 0x0a
+}
+
+msg 8, CLIENT<-SERVER {
+  "334 UGFzc3dvcmQ6"  0x0d 0x0a
+}
+
+msg 9, CLIENT->SERVER {
+  $(GUID) "cHVuamFiQDEyMw==" 0x0d 0x0a
+}
+
+msg 10, CLIENT<-SERVER {
+  "235 Authentication succeeded" 0x0d 0x0a
+}
+
+msg 11, CLIENT->SERVER {
+  "MAIL FROM: <gurpartap" $(GUID) "@patriots.in>" 0x0d 0x0a
+}
+
+msg 12, CLIENT<-SERVER {
+  "250 OK" 0x0d 0x0a
+}
+
+msg 13, CLIENT->SERVER {
+  "RCPT TO: <raj_deol2002in" $(GUID) "@yahoo.co.in>" 0x0d 0x0a
+}
+
+msg 14, CLIENT<-SERVER {
+  "250 Accepted" 0x0d 0x0a
+}
+
+msg 15, CLIENT->SERVER {
+  "DATA " $(GUID) 0x0d 0x0a
+}
+
+msg 16, CLIENT<-SERVER {
+  "354 Enter message, ending with \".\" on a line by itself" 0x0d 0x0a
+}
+
+msg 17, CLIENT->SERVER {
+"From: \"Gurpartap Singh\" <gurpartap@patriots.in>" 0x0D 0x0A 
+"To: <raj_deol2002in@yahoo.co.in>" 0x0D 0x0A 
+"Subject: SMTP" 0x0D 0x0A 
+"Date: Mon, 5 Oct 2009 11:36:07 +0530" 0x0D 0x0A 
+"Message-ID: <000301ca4581$ef9e57f0$cedb07d0$@in>" 0x0D 0x0A 
+"MIME-Version: 1.0" 0x0D 0x0A 
+"Content-Type: multipart/mixed;" 0x0D 0x0A 
+0x09 "boundary=\"----=_NextPart_000_0004_01CA45B0.095693F0\"" 0x0D 0x0A 
+"X-Mailer: Microsoft Office Outlook 12.0" 0x0D 0x0A 
+"Thread-Index: " $(GUID,64) "BvjjZEDeR1Kh8i+hUyVo0A==" 0x0D 0x0A 
+"Content-Language: en-us" 0x0D 0x0A 
+"x-cr-hashedpuzzle: SeA= AAR2 ADaH BpiO C4G1 D1gW FNB1 FPkR Fn+W HFCP HnYJ JO7s Kum6 KytW LFcI LjUt;1;cgBhAGoAXwBkAGUAbwBsADIAMAAwADIAaQBuAEAAeQBhAGgAbwBvAC4AYwBvAC4AaQBuAA==;Sosha1_v1;7;{CAA37F59-1850-45C7-8540-AA27696B5398};ZwB1AHIAcABhAHIAdABhAHAAQABwAGEAdAByAGkAbwB0AHMALgBpAG4A;Mon, 05 Oct 2009 06:06:01 GMT;UwBNAFQAUAA=" 0x0D 0x0A 
+"x-cr-puzzleid: {CAA37F59-1850-45C7-8540-AA27696B5398}" 0x0D 0x0A 
+0x0D 0x0A 
+"This is a multipart message in MIME format." 0x0D 0x0A 
+0x0D 0x0A 
+"------=_NextPart_000_0004_01CA45B0.095693F0" 0x0D 0x0A 
+"Content-Type: multipart/alternative;" 0x0D 0x0A 
+0x09 "boundary=\"----=_NextPart_001_0005_01CA45B0.095693F0\"" 0x0D 0x0A 
+0x0D 0x0A 
+0x0D 0x0A 
+"------=_NextPart_001_0005_01CA45B0.095693F0" 0x0D 0x0A 
+"Content-Type: text/plain;" 0x0D 0x0A 
+0x09 "charset=\"us-ascii\"" 0x0D 0x0A 
+"Content-Transfer-Encoding: 7bit" 0x0D 0x0A 
+0x0D 0x0A 
+"Hello" 0x0D 0x0A 
+0x0D 0x0A 
+" " 0x0D 0x0A 
+0x0D 0x0A 
+"I send u smtp pcap file " 0x0D 0x0A 
+0x0D 0x0A 
+"Find the attachment" 0x0D 0x0A 
+0x0D 0x0A 
+" " 0x0D 0x0A 
+0x0D 0x0A 
+"GPS" 0x0D 0x0A 
+0x0D 0x0A 
+0x0D 0x0A 
+"------=_NextPart_001_0005_01CA45B0.095693F0" 0x0D 0x0A 
+"Content-Type: text/html;" 0x0D 0x0A 
+0x09 "charset=\"us-ascii\"" 0x0D 0x0A 
+"Content-Transfer-Encoding: quoted-printable" 0x0D 0x0A 
+0x0D 0x0A 
+"<html xmlns:v=3D\"urn:schemas-microsoft-com:vml\" =" 0x0D 0x0A 
+"xmlns:o=3D\"urn:schemas-microsoft-com:office:office\" =" 0x0D 0x0A 
+"xmlns:w=3D\"urn:schemas-microsoft-com:office:word\" =" 0x0D 0x0A 
+"xmlns:m=3D\"http://schemas.microsoft.com/office/2004/12/omml\" =" 0x0D 0x0A 
+"xmlns=3D\"http://www.w3.org/TR/REC-html40\">" 0x0D 0x0A 
+0x0D 0x0A 
+"<head>" 0x0D 0x0A 
+"<META HTTP-EQUIV=3D\"Content-Type\" CONTENT=3D\"text/html; =" 0x0D 0x0A 
+"charset=3Dus-ascii\">" 0x0D 0x0A 
+"<meta name=3DGenerator content=3D\"Microsoft Word 12 (filtered medium)\">" 0x0D 0x0A 
+"<style>" 0x0D 0x0A 
+"<!--" 0x0D 0x0A 
+" /* Font Definitions */" 0x0D 0x0A 
+" @font-face" 0x0D 0x0A 
+0x09 "{font-family:\"Cambria Math\";" 0x0D 0x0A 
+0x09 "panose-1:2 4 5 3 5 4 6 3 2 4;}" 0x0D 0x0A 
+"@font-face" 0x0D 0x0A 
+0x09 "{font-family:Calibri;" 0x0D 0x0A 
+0x09 "panose-1:2 15 5 2 2 2 4 3 2 4;}" 0x0D 0x0A 
+" /* Style Definitions */" 0x0D 0x0A 
+" p.MsoNormal, li.MsoNormal, div.MsoNormal" 0x0D 0x0A 
+0x09 "{margin:0in;" 0x0D 0x0A 
+0x09 "margin-bottom:.0001pt;" 0x0D 0x0A 
+0x09 "font-size:11.0pt;" 0x0D 0x0A 
+0x09 "font-family:\"Calibri\",\"sans-serif\";}" 0x0D 0x0A 
+"a:link, span.MsoHyperlink" 0x0D 0x0A 
+0x09 "{mso-style-priority:99;" 0x0D 0x0A 
+0x09 "color:blue;" 0x0D 0x0A 
+0x09 "text-decoration:underline;}" 0x0D 0x0A 
+"a:visited, span.MsoHyperlinkFollowed" 0x0D 0x0A 
+0x09 "{mso-style-priority:99;" 0x0D 0x0A 
+0x09 "color:purple;" 0x0D 0x0A 
+0x09 "text-decoration:underline;}" 0x0D 0x0A 
+"span.EmailStyle17" 0x0D 0x0A 
+0x09 "{mso-style-type:personal-compose;" 0x0D 0x0A 
+0x09 "font-family:\"Calibri\",\"sans-serif\";" 0x0D 0x0A 
+0x09 "color:windowtext;}" 0x0D 0x0A 
+"..MsoChpDefault" 0x0D 0x0A 
+0x09 "{mso-style-type:export-only;}" 0x0D 0x0A 
+"@page Section1" 0x0D 0x0A 
+0x09 "{size:8.5in 11.0in;" 0x0D 0x0A 
+0x09 "margin:1.0in 1.0in 1.0in 1.0in;}" 0x0D 0x0A 
+"div.Section1" 0x0D 0x0A 
+0x09 "{page:Section1;}" 0x0D 0x0A 
+"-->" 0x0D 0x0A 
+"</style>" 0x0D 0x0A 
+"<!--[if gte mso 9]><xml>" 0x0D 0x0A 
+" <o:shapedefaults v:ext=3D\"edit\" spidmax=3D\"1026\" />" 0x0D 0x0A 
+"</xml><![endif]--><!--[if gte mso 9]><xml>" 0x0D 0x0A 
+" <o:shapelayout v:ext=3D\"edit\">" 0x0D 0x0A 
+"  <o:idmap v:ext=3D\"edit\" data=3D\"1\" />" 0x0D 0x0A 
+" </o:shapelayout></xml><![endif]-->" 0x0D 0x0A 
+"</head>" 0x0D 0x0A 
+0x0D 0x0A 
+"<body lang=3DEN-US link=3Dblue vlink=3Dpurple>" 0x0D 0x0A 
+0x0D 0x0A 
+"<div class=3DSection1>" 0x0D 
+0x0A 0x0D 0x0A 
+"<p class=3DMsoNormal>Hello<o:p></o:p></p>" 0x0D 0x0A 
+0x0D 0x0A 
+"<p class=3DMsoNormal><o:p>&nbsp;</o:p></p>" 0x0D 0x0A 
+0x0D 0x0A 
+"<p class=3DMsoNormal>I send u smtp pcap file <o:p></o:p></p>" 0x0D 0x0A 
+0x0D 0x0A 
+"<p class=3DMsoNormal>Find the attachment<o:p></o:p></p>" 0x0D 0x0A 
+0x0D 0x0A 
+"<p class=3DMsoNormal><o:p>&nbsp;</o:p></p>" 0x0D 0x0A 
+0x0D 0x0A 
+"<p class=3DMsoNormal>GPS<o:p></o:p></p>" 0x0D 0x0A 
+0x0D 0x0A 
+"</div>" 0x0D 0x0A 
+0x0D 0x0A 
+"</body>" 0x0D 0x0A 
+0x0D 0x0A 
+"</html>" 0x0D 0x0A 
+0x0D 0x0A 
+"------=_NextPart_001_0005_01CA45B0.095693F0--" 0x0D 0x0A 
+0x0D 0x0A 
+"------=_NextPart_000_0004_01CA45B0.095693F0" 0x0D 0x0A 
+"Content-Type: text/plain;" 0x0D 0x0A 
+0x09 "name=\"NEWS.txt\"" 0x0D 0x0A 
+"Content-Transfer-Encoding: quoted-printable" 0x0D 0x0A 
+"Content-Disposition: attachment;" 0x0D 0x0A 
+0x09 "filename=\"NEWS.txt\"" 0x0D 0x0A 
+0x0D 0x0A 
+"Version 4.9.9.1" 0x0D 0x0A 
+"* Many bug fixes" 0x0D 0x0A 
+"* Improved editor" 0x0D 0x0A 
+0x0D 0x0A 
+"Version 4.9.9.0" 0x0D 0x0A 
+"* Support for latest Mingw compiler system builds" 0x0D 0x0A 
+"* Bug fixes" 0x0D 0x0A 
+0x0D 0x0A 
+"Version 4.9.8.9" 0x0D 0x0A 
+"* New code tooltip display" 0x0D 0x0A 
+"* Improved Indent/Unindent and Remove Comment" 0x0D 0x0A 
+"* Improved automatic indent" 0x0D 0x0A 
+"* Added support for the \"interface\" keyword" 0x0D 0x0A 
+"* WebUpdate should now report installation problems from PackMan" 0x0D 0x0A 
+"* New splash screen and association icons" 0x0D 0x0A 
+"* Improved installer" 0x0D 0x0A 
+"* Many bug fixes" 0x0D 0x0A 
+0x0D 0x0A 
+"Version 4.9.8.7" 0x0D 0x0A 
+"* Added support for GCC > 3.2" 0x0D 0x0A 
+"* Debug variables are now resent during next debug session" 0x0D 0x0A 
+"* Watched Variables not in correct context are now kept and updated when =" 0x0D 0x0A 
+"it is needed" 0x0D 0x0A 
+"* Added new compiler/linker options:=20" 0x0D 0x0A 
+"  - Strip executable" 0x0D 0x0A 
+"  - Generate instructions for a specific machine (i386, i486, i586, =" 0x0D 0x0A 
+"i686, pentium, pentium-mmx, pentiumpro, pentium2, pentium3, pentium4,=20" 0x0D 0x0A 
+"    k6, k6-2, k6-3"
+
+
+}
+
+msg 18, CLIENT<-SERVER {
+  "250 OK id=1Mugho-0003Dg-Un" 0x0D 0x0A
+}
+
+msg 19, CLIENT->SERVER {
+  "QUIT" $(GUID) 0x0D 0x0A
+}
+
+
+
+
