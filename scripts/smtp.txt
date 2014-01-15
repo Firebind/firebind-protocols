@@ -245,7 +245,7 @@ msg 18, CLIENT<-SERVER {
 }
 
 msg 19, CLIENT->SERVER {
-  "QUIT" $(GUID) 0x0D 0x0A
+  "QUIT " $(GUID) 0x0D 0x0A
 }
 
 
