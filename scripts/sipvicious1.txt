@@ -12,10 +12,10 @@ msg 1, CLIENT->SERVER {
 "REGISTER sip:registrar.firebind.com SIP/2.0" 0x0D 0x0A
   "Via: SIP/2.0/UDP 127.0.0.1:5160;branch=x9hG47K-193079904;report" 0x0D 0x0A
   "Content-Length: 0" 0x0D 0x0A
-  "From: "6362" sip:6362@1.2.3.4" 0x0D 0x0A
+  "From: \"6362\" sip:6362@1.2.3.4" 0x0D 0x0A
   "Accept: application/sdp" 0x0D 0x0A
   "User-Agent: friendly-scanner" 0x0D 0x0A
-  "To: "6362" sip:6362@1.2.3.4" 0x0D 0x0A
+  "To: \"6362\" sip:6362@1.2.3.4" 0x0D 0x0A
   "Contact: sip:123@1.1.1.1" 0x0D 0x0A
   "CSeq: 1 REGISTER" 0x0D 0x0A
   "Call-ID: 5" $(GUID,32) 0x0D 0x0A
@@ -29,8 +29,8 @@ msg 2, CLIENT<-SERVER {
  
   "SIP/2.0 200 OK" 0x0D 0x0A
   "Via: SIP/2.0/UDP 127.0.0.1:5160;branch=x9hG47K-193079904;received=1.2.3.4" 0x0D 0x0A
-  "To: "6362" sip:6362@1.2.3.4" 0x0D 0x0A
-  "From: "6362" sip:6362@1.2.3.4" 0x0D 0x0A
+  "To: \"6362\" sip:6362@1.2.3.4" 0x0D 0x0A
+  "From: \"6362\" sip:6362@1.2.3.4" 0x0D 0x0A
   "Call-ID: 1696826551" 0x0D 0x0A
   "CSeq: 2 REGISTER" 0x0D 0x0A
   "Contact: sip:6362@1.2.3.4" 0x0D 0x0A
