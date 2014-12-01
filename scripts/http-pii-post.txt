@@ -21,8 +21,12 @@ msg 1, CLIENT->SERVER {
   "Credit-Card: 4012888888881881 04/19 566"  0x0D 0x0A
   "Social-Security: 012-34-5678"  0x0D 0x0A
    0x0D 0x0A
+  "visa: 4012888888881881 04/19"  0x0D 0x0A
+  "mastercard: 5012888888881881 04/19"  0x0D 0x0A
+  "discover: 6011888888881881 04/19"  0x0D 0x0A
+  "amex: 301288888888188 04/19"  0x0D 0x0A
 }
- 
+
 # simple response
 msg 2, CLIENT<-SERVER, delay 1000 {
   "HTTP/1.1 200 OK" 0x0D 0x0A 
@@ -36,6 +40,12 @@ msg 2, CLIENT<-SERVER, delay 1000 {
   "Content-Type: text/html; charset=ISO-8859-1" 0x0D 0x0A
   0x0D 0x0A
   "<?xml version=\"1.0\" encoding=\"UTF-8\"?>"
+  "<![CDATA["
+  "visa: 4012888888881881 04/19"  0x0D 0x0A
+  "mastercard: 5012888888881881 04/19"  0x0D 0x0A
+  "discover: 6011888888881881 04/19"  0x0D 0x0A
+  "amex: 301288888888188 04/19"  0x0D 0x0A
+  "]]>"
   "<social-security-numbers>"
     "<number>012-34-5678</number>"
     "<number>012-34-5678</number>"
