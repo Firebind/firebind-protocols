@@ -39,13 +39,11 @@ msg 2, CLIENT<-SERVER, delay 1000 {
   "Connection: Keep-Alive" 0x0D 0x0A
   "Content-Type: text/html; charset=ISO-8859-1" 0x0D 0x0A
   0x0D 0x0A
-  "<?xml version=\"1.0\" encoding=\"UTF-8\"?>"
-  "<![CDATA["
   "visa: 4012888888881881 04/19"  0x0D 0x0A
   "mastercard: 5012888888881881 04/19"  0x0D 0x0A
   "discover: 6011888888881881 04/19"  0x0D 0x0A
   "amex: 301288888888188 04/19"  0x0D 0x0A
-  "]]>"
+  "<?xml version=\"1.0\" encoding=\"UTF-8\"?>"
   "<social-security-numbers>"
     "<number>012-34-5678</number>"
     "<number>012-34-5678</number>"
