@@ -19,12 +19,12 @@ msg 1, CLIENT->SERVER {
   "Keep-Alive: " $(GUID,32) 0x0D 0x0A
   "Connection: keep-alive" 0x0D 0x0A
   "Credit-Card: 4012888888881881 04/19 566"  0x0D 0x0A
-  "Social-Security: 012-34-5678"  0x0D 0x0A
+  "Social-Security: 012-60-5678"  0x0D 0x0A
    0x0D 0x0A
   "visa: 4012888888881881 04/19"  0x0D 0x0A
-  "mastercard: 5012888888881881 04/19"  0x0D 0x0A
-  "discover: 6011888888881881 04/19"  0x0D 0x0A
-  "amex: 301288888888188 04/19"  0x0D 0x0A
+  "mastercard: 5555555555554444 04/19"  0x0D 0x0A
+  "discover: 6011111111111117 04/19"  0x0D 0x0A
+  "amex: 378282246310005 04/19"  0x0D 0x0A
 }
 
 # simple response
@@ -40,9 +40,9 @@ msg 2, CLIENT<-SERVER, delay 1000 {
   "Content-Type: text/html; charset=ISO-8859-1" 0x0D 0x0A
   0x0D 0x0A
   "visa: 4012888888881881 04/19"  0x0D 0x0A
-  "mastercard: 5012888888881881 04/19"  0x0D 0x0A
-  "discover: 6011888888881881 04/19"  0x0D 0x0A
-  "amex: 301288888888188 04/19"  0x0D 0x0A
+  "mastercard: 5555555555554444 04/19"  0x0D 0x0A
+  "discover: 6011111111111117 04/19"  0x0D 0x0A
+  "amex: 378282246310005 04/19"  0x0D 0x0A
 }
 
 # This script is for use with Firebind Path Scan Client Software
