@@ -1,7 +1,7 @@
 # Hypertext Transfer Protocol (HTTP) version 1.1 request and response
 # As specified by IETF RFC 2616 (http://tools.ietf.org/html/rfc2616)
 # This is a simulated request and response containing PII such as
-@ social security numbers, credit cards, names and birthdays
+# social security numbers, credit cards, names and birthdays
 
 Name "HTTP-PII-POST"
 Ports "80"
