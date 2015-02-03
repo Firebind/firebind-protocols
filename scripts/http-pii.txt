@@ -8,7 +8,7 @@ Ports "80"
 Transport "TCP"
 
 # Basic HTTP request
-msg 1, CLIENT->SERVER {
+msg 1, INITIATOR->TARGET {
   "GET /index.html HTTP/1.1" 0x0D 0x0A
   "Host: www.firebind.com" 0x0D 0x0A
   "User-Agent: Mozilla/5.0 (Windows; U; Windows NT 5.1; en-US; rv:1.6) Gecko/20040113" 0x0D 0x0A
@@ -24,7 +24,7 @@ msg 1, CLIENT->SERVER {
 }
  
 # simple response
-msg 2, CLIENT<-SERVER, delay 1000 {
+msg 2, INITIATOR<-TARGET, delay 1000 {
   "HTTP/1.1 200 OK" 0x0D 0x0A 
   "Date: Thu, 16 May 2014 10:17:12 GMT" 0x0D 0x0A
   "Server: Apache" 0x0D 0x0A

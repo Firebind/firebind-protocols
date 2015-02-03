@@ -7,7 +7,7 @@ Ports "80"
 Transport "TCP"
 
 # Basic HTTP request
-msg 1, CLIENT->SERVER {
+msg 1, INITIATOR->TARGET {
 "GET /download/eicar.com.txt HTTP/1.1" 0x0D 0x0A 
 "Host: www.eicar.org" 0x0D 0x0A 
 "Connection: keep-alive" 0x0D 0x0A 
@@ -22,7 +22,7 @@ msg 1, CLIENT->SERVER {
 }
  
 # simple response
-msg 2, CLIENT<-SERVER, delay 1000 {
+msg 2, INITIATOR<-TARGET, delay 1000 {
 "HTTP/1.1 200 OK" 0x0D 0x0A 
 "Date: Wed, 22 Jan 2014 01:43:29 GMT" 0x0D 0x0A 
 "Server: Apache" 0x0D 0x0A 

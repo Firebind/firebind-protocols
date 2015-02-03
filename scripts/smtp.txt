@@ -7,21 +7,21 @@ Ports "25,587"
 Transport "TCP"
 
 #EHLO GP - 45 48 4c 4f 20 47 50 0d 0a
-msg 1, CLIENT->SERVER {
+msg 1, INITIATOR->TARGET {
  "EHLO GP" $(GUID) 0x0d 0x0a
 }
 
-msg 2, CLIENT<-SERVER {
+msg 2, INITIATOR<-TARGET {
 "220-xc90.websitewelcome.com ESMTP Exim 4.69 #1 Mon, 05 Oct 2009 01:05:54 -0500 " 0x0D 0x0A 
 "220-We do not authorize the use of this system to transport unsolicited, " 0x0D 0x0A 
 "220 and/or bulk e-mail." 0x0D 0x0A 
 }
 
-msg 3, CLIENT->SERVER {
+msg 3, INITIATOR->TARGET {
  "EHLO " $(GUID) 0x0d 0x0a
 }
 
-msg 4, CLIENT<-SERVER {
+msg 4, INITIATOR<-TARGET {
   "250-xc90.websitewelcome.com Hello GP" $(GUID) " [122.162.143.157]" 0x0d 0x0a
   "250-SIZE 52428800" 0x0d 0x0a
   "250-PIPELINING" 0x0d 0x0a
@@ -30,55 +30,55 @@ msg 4, CLIENT<-SERVER {
   "250 HELP" 0x0d 0x0a
 }
 
-msg 5, CLIENT->SERVER {
+msg 5, INITIATOR->TARGET {
   "AUTH LOGIN " $(GUID) 0x0d 0x0a
 }
 
-msg 6, CLIENT<-SERVER {
+msg 6, INITIATOR<-TARGET {
   "334 VXNlcm5hbWU6" 0x0d 0x0a
 }
 
-msg 7, CLIENT->SERVER {
+msg 7, INITIATOR->TARGET {
   "Z3VycGFydGFwQHBhdHJpb3RzLmlu" $(GUID) 0x0d 0x0a
 }
 
-msg 8, CLIENT<-SERVER {
+msg 8, INITIATOR<-TARGET {
   "334 UGFzc3dvcmQ6"  0x0d 0x0a
 }
 
-msg 9, CLIENT->SERVER {
+msg 9, INITIATOR->TARGET {
   $(GUID) "cHVuamFiQDEyMw==" 0x0d 0x0a
 }
 
-msg 10, CLIENT<-SERVER {
+msg 10, INITIATOR<-TARGET {
   "235 Authentication succeeded" 0x0d 0x0a
 }
 
-msg 11, CLIENT->SERVER {
+msg 11, INITIATOR->TARGET {
   "MAIL FROM: <gurpartap" $(GUID) "@patriots.in>" 0x0d 0x0a
 }
 
-msg 12, CLIENT<-SERVER {
+msg 12, INITIATOR<-TARGET {
   "250 OK" 0x0d 0x0a
 }
 
-msg 13, CLIENT->SERVER {
+msg 13, INITIATOR->TARGET {
   "RCPT TO: <raj_deol2002in" $(GUID) "@yahoo.co.in>" 0x0d 0x0a
 }
 
-msg 14, CLIENT<-SERVER {
+msg 14, INITIATOR<-TARGET {
   "250 Accepted" 0x0d 0x0a
 }
 
-msg 15, CLIENT->SERVER {
+msg 15, INITIATOR->TARGET {
   "DATA " $(GUID) 0x0d 0x0a
 }
 
-msg 16, CLIENT<-SERVER {
+msg 16, INITIATOR<-TARGET {
   "354 Enter message, ending with \".\" on a line by itself" 0x0d 0x0a
 }
 
-msg 17, CLIENT->SERVER {
+msg 17, INITIATOR->TARGET {
 "From: \"Gurpartap Singh\" <gurpartap@patriots.in>" 0x0D 0x0A 
 "To: <raj_deol2002in@yahoo.co.in>" 0x0D 0x0A 
 "Subject: SMTP" 0x0D 0x0A 
@@ -240,11 +240,11 @@ msg 17, CLIENT->SERVER {
 
 }
 
-msg 18, CLIENT<-SERVER {
+msg 18, INITIATOR<-TARGET {
   "250 OK id=1Mugho-0003Dg-Un" 0x0D 0x0A
 }
 
-msg 19, CLIENT->SERVER {
+msg 19, INITIATOR->TARGET {
   "QUIT " $(GUID) 0x0D 0x0A
 }
 

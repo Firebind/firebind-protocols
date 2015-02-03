@@ -7,7 +7,7 @@ Ports "554"
 Transport "TCP"
 
 # the setup request, note the GUID is text encoded in the request URI
-msg 1, CLIENT->SERVER {
+msg 1, INITIATOR->TARGET {
   "SETUP rtsp://firebind?AppUid=" $(GUID.TXT) "&AssetUid=0008000b&NodeGroupId=1&PackageId=0 RTSP/1.0" 0x0D 0x0A
   "CSeq: 1" 0x0D 0x0A
   "Firebind-Version: 2.0" 0x0D 0x0A
@@ -19,7 +19,7 @@ msg 1, CLIENT->SERVER {
 }
 
 # setup response
-msg 2, CLIENT<-SERVER, delay 1000 {  
+msg 2, INITIATOR<-TARGET, delay 1000 {  
   "RTSP/1.0 200 OK" 0x0D 0x0A
   "Accept-Ranges: NPT" 0x0D 0x0A
   "CSeq: 1" 0x0D 0x0A

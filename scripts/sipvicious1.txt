@@ -7,7 +7,7 @@ Ports "5060"
 Transport "TCP"
 
 # Basic HTTP request
-msg 1, CLIENT->SERVER {
+msg 1, INITIATOR->TARGET {
 
 "REGISTER sip:registrar.firebind.com SIP/2.0" 0x0D 0x0A
   "Via: SIP/2.0/UDP 127.0.0.1:5160;branch=x9hG47K-193079904;report" 0x0D 0x0A
@@ -25,7 +25,7 @@ msg 1, CLIENT->SERVER {
 }
  
 # simple response
-msg 2, CLIENT<-SERVER {
+msg 2, INITIATOR<-TARGET {
  
   "SIP/2.0 200 OK" 0x0D 0x0A
   "Via: SIP/2.0/UDP 127.0.0.1:5160;branch=x9hG47K-193079904;received=1.2.3.4" 0x0D 0x0A
