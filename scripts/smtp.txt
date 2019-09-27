@@ -1,10 +1,7 @@
 # Simple Mail Transfer Protocol (SMTP)
-# As defined by IETF RFC5321 (http://tools.ietf.org/html/rfc5321)
-#
+# As defined by IETF RFC5321 (https://tools.ietf.org/html/rfc5321)
 
 Name "SMTP"
-Ports "25,587"
-Transport "TCP"
 
 #EHLO GP - 45 48 4c 4f 20 47 50 0d 0a
 msg 1, INITIATOR->TARGET {
@@ -249,5 +246,5 @@ msg 19, INITIATOR->TARGET {
 }
 
 
-
-
+# This script created for use with Firebind - www.firebind.com
+# Copyright (c) 2019 Firebind Inc. All rights reserved.
