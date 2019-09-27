@@ -1,10 +1,8 @@
 # Hypertext Transfer Protocol (HTTP) version 1.1 request and response
-# As specified by IETF RFC 2616 (http://tools.ietf.org/html/rfc2616)
+# As specified by IETF RFC 2616 (https://tools.ietf.org/html/rfc2616)
 # This is a simulated request and response containing the EICAR string
 
 Name "HTTP-EICAR"
-Ports "80"
-Transport "TCP"
 
 # Basic HTTP request
 msg 1, INITIATOR->TARGET {
@@ -36,5 +34,5 @@ msg 2, INITIATOR<-TARGET, delay 1000 {
 "X5O!P%@AP[4\PZX54(P^)7CC)7}$EICAR-STANDARD-ANTIVIRUS-TEST-FILE!$H+H*" 0x0A 0x0A 
 }
 
-# This script is for use with Firebind Path Scan Client Software
-# Copyright (C) 2013 Firebind Inc. All rights reserved.
+# This script created for use with Firebind - www.firebind.com
+# Copyright (c) 2019 Firebind Inc. All rights reserved.
