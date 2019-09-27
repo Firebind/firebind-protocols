@@ -3,8 +3,6 @@
 # This is a simulated request and response
 
 Name "SIPVICIOUS"
-Ports "5060"
-Transport "TCP"
 
 # Basic HTTP request
 msg 1, INITIATOR->TARGET {
@@ -40,5 +38,5 @@ msg 2, INITIATOR<-TARGET {
 
 }
 
-# This script is for use with Firebind Path Scan Client Software
-# Copyright (C) 2014 Firebind Inc. All rights reserved.
+# This script created for use with Firebind - www.firebind.com
+# Copyright (c) 2019 Firebind Inc. All rights reserved.
