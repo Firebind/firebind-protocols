@@ -10,8 +10,6 @@
 #   snort sid: 42329,42330
 
 Name "WannaCry-DOUBLEPULSAR"
-Ports "445"
-Transport "TCP"
 
 # send signature to target
 msg 1, INITIATOR->TARGET {
@@ -45,5 +43,5 @@ msg 2, INITIATOR<-TARGET {
    
 }
 
-# This script is for use with Firebind Path Scan Client Software
-# Copyright (C) 2017 Firebind Inc. All rights reserved.
+# This script created for use with Firebind - www.firebind.com
+# Copyright (c) 2019 Firebind Inc. All rights reserved.
