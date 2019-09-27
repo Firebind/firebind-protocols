@@ -1,10 +1,8 @@
 # Domain Name System (DNS) Query and response
-# As defined by IETF RFC1035 (http://tools.ietf.org/html/rfc1035)
+# As defined by IETF RFC1035 (https://tools.ietf.org/html/rfc1035)
 # this is a simulated DNS query for a real host to a real DNS server
 
 Name "DNS"
-Ports "53"
-Transport "UDP"
 
 # this is the standard query, the scan GUID is inserted dynamically in base64
 # representation at octet 13 and occupies 224 bits (28 octets)
@@ -33,5 +31,5 @@ msg 2, INITIATOR<-TARGET {
   0x32 0x00 0x04 0x4a 0xd0 0xbf 0x5f
 }
 
-# This script is for use with Firebind Path Scan Client Software
-# Copyright (C) 2013 Firebind Inc. All rights reserved.
+# This script created for use with Firebind - www.firebind.com
+# Copyright (c) 2019 Firebind Inc. All rights reserved.
