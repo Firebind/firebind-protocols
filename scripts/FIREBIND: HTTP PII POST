@@ -43,5 +43,5 @@ msg 2, INITIATOR<-TARGET, delay 1000 {
   "amex: 378282246310005 04/19"  0x0D 0x0A
 }
 
-# This script created for use with Firebind - www.firebind.com
-# Copyright (c) 2020 Firebind Inc. All rights reserved.
+# This script created for use with Firebind Recon - www.firebind.com
+# Copyright (C) 2020 Firebind Inc. All rights reserved
