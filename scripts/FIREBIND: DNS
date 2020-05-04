@@ -31,5 +31,5 @@ msg 2, INITIATOR<-TARGET {
   0x32 0x00 0x04 0x4a 0xd0 0xbf 0x5f
 }
 
-# This script created for use with Firebind - www.firebind.com
-# Copyright (c) 2020 Firebind Inc. All rights reserved.
+# This script created for use with Firebind Recon - www.firebind.com
+# Copyright (C) 2020 Firebind Inc. All rights reserved
