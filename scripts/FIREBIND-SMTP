@@ -1,7 +1,7 @@
 # Simple Mail Transfer Protocol (SMTP)
 # As defined by IETF RFC5321 (https://tools.ietf.org/html/rfc5321)
 
-Name "SMTP"
+Name "FIREBIND-SMTP"
 
 #EHLO GP - 45 48 4c 4f 20 47 50 0d 0a
 msg 1, INITIATOR->TARGET {
