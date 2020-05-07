@@ -3,7 +3,7 @@
 # This is a simulated request and response containing PII such as
 # social security numbers, credit cards, names and birthdays
 
-Name "HTTP-PII"
+Name "FIREBIND-HTTP PII"
 
 # Basic HTTP request
 msg 1, INITIATOR->TARGET {
