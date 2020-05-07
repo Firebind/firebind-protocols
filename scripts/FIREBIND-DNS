@@ -2,7 +2,7 @@
 # As defined by IETF RFC1035 (https://tools.ietf.org/html/rfc1035)
 # this is a simulated DNS query for a real host to a real DNS server
 
-Name "FIREBIND: DNS"
+Name "FIREBIND-DNS"
 
 # this is the standard query, the scan GUID is inserted dynamically in base64
 # representation at octet 13 and occupies 224 bits (28 octets)
