@@ -2,7 +2,7 @@
 # As specified by IETF RFC 2616 (https://tools.ietf.org/html/rfc2616)
 # This is a simulated request and response
 
-Name "HTTP"
+Name "FIREBIND-HTTP GET"
 
 # Basic HTTP request
 msg 1, INITIATOR->TARGET {
