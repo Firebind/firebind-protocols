@@ -2,7 +2,7 @@
 # As defined by IETF RFC2326 (https://tools.ietf.org/html/rfc2326)
 # this is a simulated setup request to a real RTSP server
 
-Name "RTSP"
+Name "FIREBIND-RTSP"
 
 # the setup request, note the GUID is text encoded in the request URI
 msg 1, INITIATOR->TARGET {
